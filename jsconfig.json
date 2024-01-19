@@ -11,6 +11,12 @@
       "components/*": [
         "src/components/*"
       ],
+      "helpers/*": [
+        "src/helpers/*"
+      ],
+      "services/*": [
+        "src/services/*"
+      ],
       "layouts/*": [
         "src/layouts/*"
       ],

@@ -58,6 +58,7 @@ module.exports = {
 
   // add your custom rules here
   rules: {
+    camelcase: 'off',
     'no-param-reassign': 'off',
     'no-void': 'off',
     'no-nested-ternary': 'off',

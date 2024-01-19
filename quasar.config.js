@@ -43,7 +43,7 @@ module.exports = configure((/* ctx */) => ({
   extras: [
     // 'ionicons-v4',
     // 'mdi-v5',
-    // 'fontawesome-v6',
+    'fontawesome-v6',
     // 'eva-icons',
     // 'themify',
     // 'line-awesome',
@@ -55,6 +55,10 @@ module.exports = configure((/* ctx */) => ({
 
   // Full list of options: https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#build
   build: {
+    alias: {
+      helpers: path.join(__dirname, './src/helpers'),
+      services: path.join(__dirname, './src/services'),
+    },
     target: {
       browser: ['es2019', 'edge88', 'firefox78', 'chrome87', 'safari13.1'],
       node: 'node16',
@@ -98,11 +102,28 @@ module.exports = configure((/* ctx */) => ({
   devServer: {
     // https: true
     open: true, // opens browser window automatically
+    vueDevtools: true,
   },
 
   // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#framework
   framework: {
-    config: {},
+    config: {
+      brand: {
+        primary: '#565be8',
+        secondary: '#d91818',
+        accent: '#27b0a0',
+
+        dark: '#5c5c5c',
+        'dark-page': '#121212',
+
+        positive: '#21c246',
+        negative: '#ff0000',
+        info: '#326ded',
+        warning: '#db8504',
+      },
+      dark: 'auto',
+      notify: {},
+    },
 
     // iconSet: 'material-icons', // Quasar icon set
     // lang: 'en-US', // Quasar language pack
@@ -115,7 +136,9 @@ module.exports = configure((/* ctx */) => ({
     // directives: [],
 
     // Quasar plugins
-    plugins: [],
+    plugins: [
+      'Notify',
+    ],
   },
 
   // animations: 'all', // --- includes all animations
